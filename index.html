@@ -4,22 +4,16 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<title>Tripsta - Brand integration</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -28,7 +22,6 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -37,341 +30,244 @@
 	<body>
 
 		<div class="reveal">
-
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>Tripsta</h1>
+					<h3>Brand integration</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small><a href="https://github.com/tripsta/app/wiki/Integration-of-Brand-in-TP24-app">Full wiki</a></small>
 					</p>
 				</section>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
+                <section>
+                    <section>
+                        <h1>New entities</h1>
+                    </section>
+                    <section>
+                        <h2>Brand</h2>
+                        <img data-src="http://www.sweetcounter.co.uk/images/products/flags9yc.jpg">
+                    </section>
+                    <section>
+                        <h2>Market</h2>
+                        <img data-src="http://blog.travelplanet24.com/files/2012/11/Untitled-4.jpg">
+                    </section>
+                    <section>
+                        <h2>Brand + Market = </h2>
+                        <h1 class="fragment">Wing</h1>
+                    </section>
+                    <section>
+                        <h2>Brand table</h2>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>BrandID</th>
+                                <th>Name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>tripsta</td>
+                            <tr>
+                            <tr>
+                                <td>2</td>
+                                <td>travelplanet24</td>
+                            <tr>
+                            <tr>
+                                <td>3</td>
+                                <td>airtickets</td>
+                            <tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Market table</h2>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>MarketID</th>
+                                <th>Name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>gr</td>
+                            <tr>
+                            <tr>
+                                <td>2</td>
+                                <td>de</td>
+                            <tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Wing table</h2>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>WingID</th>
+                                <th>BrandID</th>
+                                <th>MarketID</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1011</td>
+                                <td>1</td>
+                                <td>11</td>
+                            <tr>
+                            <tr>
+                                <td>2002</td>
+                                <td>2</td>
+                                <td>2</td>
+                            <tr>
+                            </tbody>
+                        </table>
+                    </section>
 				</section>
 
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+                    <h2>Questions</h2>
+                    <ul style="text-align: left;">
+                        <li class="fragment">Should we use wingId, marketId or BrandId in existing tables like Booking?</li>
+                        <li class="fragment">Is it faster to have two columns (marketId/BrandId) or one (wingId)?</li>
+                        <li class="fragment">Is it faster to have two joins (marketId/BrandId) or a triple one (wingId)?</li>
+                        <li class="fragment">Should we enforce the use of the marketId/BrandId pair or leave to developers' implementation?</li>
+                    </ul>
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+                    <section>
+                        <h2>Let's evaluate 2 solutions</h2>
+                    </section>
+                    <section>
+                        <h2>Solution 1</h2>
+                        <ul style="text-align: left;">
+                            <li class="fragment">Use of WingId in every table that needs both Market and Brand</li>
+                            <li class="fragment">Use of MarketId or BrandId in any table that needs only the specific reference</li>
+                            <li class="fragment">Use of MarketId AND BrandId in cases, like Service Fee Rules, that one of the two might be optional</li>
+                            <li class="fragment">Use of Market and Brand is enforced by using WingId</li>
+                            <li class="fragment">One index per table on WingId</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Solution 2</h2>
+                        <ul style="text-align: left;">
+                            <li class="fragment">Use in all tables the BrandID and the MarketID columns</li>
+                            <li class="fragment">Wing table will be used as a reference of the valid Market/Brand pairs without functional use</li>
+                            <li class="fragment">Use of Market <b>and</b> Brand is left to the developer to decide</li>
+                            <li class="fragment">3 indices per table on MarketID, BrandID and the compound MarketID/BrandID</li>
+                        </ul>
+                    </section>
 				</section>
 
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
+					<h2>Preparation</h2>
+                    <ul style="text-align: left;">
+                        <li class="fragment">Use dbstage1.tripsta.net, a machine with hardware to support the live db</li>
+                        <li class="fragment">Create 2 copies of Booking table with live data</li>
+                        <li class="fragment">Create the 3 tables needed: Wing, Brand, Market</li>
+                        <li class="fragment">Booking1: add windID column and add the index IX_Booking_WingID.</li>
+                        <li class="fragment">Booking2: add marketID, brandID columns and add the indices IX_Booking_MarketID_BrandID (compound), IX_Booking_MarketID, IX_Booking_BrandID</li>
+                    </ul>
+				</section>
+
+                <section style="text-align: left;">
+                    <section>
+                        <h2>Run the queries</h2>
+                    </section>
+                    <section>
+                        <h3>Query 1 - LEGACY usage (wing column)</h3>
+                        <code>SELECT SQL_NO_CACHE count(*) <br>
+                            FROM Booking bk <br>
+                            WHERE bk.wing = 'gr';</code>
+                        <h4>0.76</h4>
+                    </section>
+                    <section>
+                        <h3>Query 2 - Case 1 with JOINS</h3>
+                        <code>SELECT SQL_NO_CACHE count(*) <br>
+                            FROM Booking1 bk  <br>
+                            JOIN Wing w ON bk.wingID = w.wingID  <br>
+                            JOIN Market m ON w.marketID = m.marketID  <br>
+                            JOIN Brand b ON w.brandID = b.brandID  <br>
+                            WHERE m.name = 'gr' AND b.name = 'travelplanet24'; <br>
+                        </code>
+                        <h4>0.49</h4>
+                    </section>
+                    <section>
+                        <h3>Query 3 - Case 1 without JOINS</h3>
+                        <code>SELECT SQL_NO_CACHE count(*) <br>
+                            FROM Booking1 bk WHERE bk.wingID = 2002<br>
+                        </code>
+                        <h4>0.49</h4>
+                    </section>
+                    <section>
+                        <h3>Query 4 - Case 1 with JOINS market only</h3>
+                        <code>SELECT SQL_NO_CACHE count(*) <br>
+                            FROM Booking1 bk  <br>
+                            JOIN Wing w ON bk.wingID = w.wingID  <br>
+                            JOIN Market m ON w.marketID = m.marketID  <br>
+                            WHERE m.name = 'gr';<br>
+                        </code>
+                        <h4>0.49</h4>
+                    </section>
+                    <section>
+                        <h3>Query 5 - Case 2 with JOINS</h3>
+                        <code>SELECT SQL_NO_CACHE count(*) <br>
+                            FROM Booking2 bk FORCE INDEX (IX_Booking_MarketID_BrandID)  <br>
+                            JOIN Market m ON bk.marketID = m.marketID  <br>
+                            JOIN Brand b ON bk.brandID = b.brandID  <br>
+                            WHERE m.name = 'gr' AND b.name = 'travelplanet24';<br>
+                        </code>
+                        <h4>0.58</h4>
+                    </section>
+                    <section>
+                        <h3>Query 6 - Case 2 without JOINS</h3>
+                        <code>SELECT SQL_NO_CACHE count(*) <br>
+                            FROM Booking2 bk FORCE INDEX (IX_Booking_MarketID_BrandID)  <br>
+                            WHERE bk.marketID = 2 AND bk.brandID = 2;<br>
+                        </code>
+                        <h4>0.57</h4>
+                    </section>
+                    <section>
+                        <h3>Query 7 - Case 2 without JOINS market only</h3>
+                        <code>SELECT SQL_NO_CACHE count(*) <br>
+                            Booking2 bk WHERE bk.marketID = 2;<br>
+                        </code>
+                        <h4>0.50</h4>
+                    </section>
+                </section>
+
+
+				<section>
+                    <section>
+                        <h2>Main findings</h2>
+                        <p align="left">Any solution is FASTER than using wing column because the later is a varchar.</p>
+                        <small class="fragment">Query 1 vs 2 or 6</small>
+                        <p class="fragment" align="left">In any Solution using the JOINed tables or setting the values hardcoded makes *no* difference in time.</p>
+                        <p class="fragment"><small>Why? The loading of these few data/rows is very fast. Query 2 vs 3, Query 5 vs 6</small></p>
+                        <p class="fragment" align="left">Solution 1 is faster by 10ms from Solution 2 even if it has a triple join. </p>
+                        <p class="fragment"><small>Why? The key length of windId is 4 but the 2 columns have a key length 8 Query 2 vs 5</small></p>
+                    </section>
+
+                    <section>
+                        <h2>More findings</h2>
+                        <p align="left">Solution 2: Schema alteration takes double the time because of the 3 indices</p>
+                        <p class="fragment" align="left">All updates of windID, brandID or makretID run 30% faster when we disable unique_checks and foreign_key_checks.</p>
+                        <p class="fragment" align="left">In Booking2 table where we added marketId and brandID, the query did not use the compound index but the insection of the 2 single indices which created a decline in performance. We forced the use of the compound index to have the final recorded time.</p>
+                        <p class="fragment" align="left">The update of the new wingID breaks with a Percona related error 5. We split the updates per market.</p>
+                    </section>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+                    <h1>Conclusion</h1>
+                    <p align="left">Use of WingId in every table that needs both Market and Brand</p>
+                    <p align="left">Use of MarketId or BrandId in any table that needs only the specific reference</p>
+                    <p align="left">Use of MarketId AND BrandId in cases, like Service Fee Rules, that one of the two might be optional</p>
+                    <p align="left">Use of Market and Brand is enforced by using WingId</p>
 				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
 			</div>
 
 		</div>
