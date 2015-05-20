@@ -278,9 +278,22 @@
             A tool to define and activate a multi-container application "bundle" of containers in a single file,
             then spin your application up in a single command.
         </p>
-        <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
-           docker run -d -p 80 -v /var/www/myapp apache2
-        </code></pre>
+        <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="yml">
+ wp:
+   image: library/wordpress:latest
+   ports:
+     - 80:80
+   volumes:
+     - ~/wordpress:/var/www/html
+   links:
+     - mysql:mysql
+ mysql:
+   image: mysql:latest
+   volumes:
+     - ./data/mysql:/var/lib/mysql
+     - ./log/mysql:/var/log/mysql
+.
+</code></pre>
     </section>
     <section>
         <h1>Repository</h1>
