@@ -279,7 +279,8 @@ telnet 127.0.0.1 11211
 set Test 0 100 10
 JournalDev
 stats items
-docker kill memcached
+close
+docker rm -f memcached
 docker exec -d -p 11211:11211 memcached bash
         </code></pre>
         </aside>
