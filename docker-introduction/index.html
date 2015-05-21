@@ -227,17 +227,14 @@
             A Dockerfile contains the instructions to build an image
         </p>
         <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
-            FROM ubuntu
+FROM ubuntu
 
-            RUN apt-get install -y apache2
+RUN apt-get install --assume-yes -qq memcached telnet
+USER daemon
 
-            ENV APACHE_RUN_USER www-data
-            ENV APACHE_RUN_GROUP www-data
-            ENV APACHE_LOG_DIR /var/log/apache2
-            EXPOSE 80
+EXPOSE 11211
 
-            ENTRYPOINT ["/usr/sbin/apache2"]
-            CMD ["-D", "FOREGROUND"]
+CMD ["memcached", "-u", "root"]
         </code></pre>
     </section>
     <section>
@@ -247,7 +244,9 @@
             A read-only File layer containing Libs/App
         </p>
         <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
-            docker build -t="apache2" .
+            docker build -t="memcached" .
+            # List all images
+            docker images
         </code></pre>
         <ul style="text-align: left; margin-top: 20px;">
             <li class="fragment">
@@ -260,6 +259,30 @@
                 Images are stored in repositories and can be distributed through a Registry servers.
             </li>
         </ul>
+        <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
+
+        </code></pre>
+    </section>
+    <section>
+        <!-- WETTY -->
+        <iframe width="1000" height="500" frameborder="0" allowfullscreen="" src="https://localhost:2233/wetty/ssh/user"></iframe>
+
+        <aside class="notes">
+        <pre class="fragment" style="text-align: left; margin-top: 20px;font-size: 10px;"><code class="bash" data-trim>
+cd /opt/codebase/georgeyord/presentations/docker-introduction/terminal/; clear;
+docker build -t="memcached" .
+docker images | grep memcached
+docker ps | grep memcached
+docker run -d -p 11211:11211 --name "memcached" memcached
+netstat -ntlp | grep 11211
+telnet 127.0.0.1 11211
+set Test 0 100 10
+JournalDev
+stats items
+docker kill memcached
+docker exec -d -p 11211:11211 memcached bash
+        </code></pre>
+        </aside>
     </section>
     <section>
         <h1>Container</h1>
@@ -268,7 +291,9 @@
             To activate a "VM" in Docker you run a container from an Image.
         </p>
            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
-               docker run -d -p 80 -v /var/www/myapp apache2
+               docker run -d -p 11211:11211 --name "memcached" memcached
+               # List running containers
+               docker ps
            </code></pre>
     </section>
     <section>
@@ -619,23 +644,36 @@
                 ...
             </li>
         </ul>
+    </section>
 </section>
 
 <section>
-    <h2>Want to Learn More?</h2>
-    <ul style="text-align: left">
-        <li><a href="http://www.docker.io/">www.docker.io</a></li>
-        <ul>
-            <li>Documentation</li>
-            <li>Getting started (tutorial, installation, guide, etc)</li>
-            <li>Introductory <a href="http://www.docker.io/the-whole-story/">whitepaper</a></li>
+    <section>
+        <h1>Thank you!</h1>
+        <h2 style="margin-top: 100px;text-align: left;">Informnation for the presentation</h2>
+        <ul style="text-align: left; font-size: smaller;">
+            <li>Written in HTML Presentation Framework <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a></li>
+            <li><a href="https://github.com/krishnasrinivas/wetty">Wetty</a> terminal used for live presentation</li>
+            <li>Presentation run on nodejs using grunt</li>
+            <li>Ofcourse, everything run on Docker</li>
         </ul>
-        <li>Github: <a href="http://github.com/dotcloud/docker">dotcloud/docker</a></li>
-        <li>IRC: freenode #docker</li>
-        <li>Google Group: <a href="https://groups.google.com/forum/#!forum/docker-user">docker-user</a></li>
-        <li>Twitter: <a href="http://twitter.com/docker">@docker</a></li>
-        <li>Meetups: <a href="http://www.docker.io/meetups">www.docker.io/meetups</a></li>
-    </ul>
+    </section>
+    <section>
+        <h2>Want to Learn More?</h2>
+        <ul style="text-align: left">
+            <li><a href="http://www.docker.io/">www.docker.io</a></li>
+            <ul>
+                <li>Documentation</li>
+                <li>Getting started (tutorial, installation, guide, etc)</li>
+                <li>Introductory <a href="http://www.docker.io/the-whole-story/">whitepaper</a></li>
+            </ul>
+            <li>Github: <a href="http://github.com/dotcloud/docker">dotcloud/docker</a></li>
+            <li>IRC: freenode #docker</li>
+            <li>Google Group: <a href="https://groups.google.com/forum/#!forum/docker-user">docker-user</a></li>
+            <li>Twitter: <a href="http://twitter.com/docker">@docker</a></li>
+            <li>Meetups: <a href="http://www.docker.io/meetups">www.docker.io/meetups</a></li>
+        </ul>
+    </section>
 </section>
 </div>
 
