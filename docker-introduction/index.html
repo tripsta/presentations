@@ -244,9 +244,9 @@ CMD ["memcached", "-u", "root"]
             A read-only File layer containing Libs/App
         </p>
         <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
-            docker build -t="memcached" .
-            # List all images
-            docker images
+docker build -t="memcached" .
+# List all images
+docker images
         </code></pre>
         <ul style="text-align: left; margin-top: 20px;">
             <li class="fragment">
@@ -259,9 +259,6 @@ CMD ["memcached", "-u", "root"]
                 Images are stored in repositories and can be distributed through a Registry servers.
             </li>
         </ul>
-        <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
-
-        </code></pre>
     </section>
     <section>
         <!-- WETTY -->
@@ -281,6 +278,8 @@ JournalDev
 stats items
 close
 docker rm -f memcached
+docker run -it -e API_KEY=c938492693a9ef73deda252dabcea georgeyord/wego
+docker run -it --rm supertest2014/nyan
 docker exec -d -p 11211:11211 memcached bash
         </code></pre>
         </aside>
@@ -292,9 +291,9 @@ docker exec -d -p 11211:11211 memcached bash
             To activate a "VM" in Docker you run a container from an Image.
         </p>
            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
-               docker run -d -p 11211:11211 --name "memcached" memcached
-               # List running containers
-               docker ps
+docker run -d -p 11211:11211 --name "memcached" memcached
+# List running containers
+docker ps
            </code></pre>
     </section>
     <section>
@@ -309,17 +308,29 @@ docker exec -d -p 11211:11211 memcached bash
    image: library/wordpress:latest
    ports:
      - 80:80
-   volumes:
-     - ~/wordpress:/var/www/html
    links:
      - mysql:mysql
  mysql:
    image: mysql:latest
+   environment:
+     - MYSQL_ROOT_PASSWORD=root
    volumes:
      - ./data/mysql:/var/lib/mysql
      - ./log/mysql:/var/log/mysql
 .
 </code></pre>
+    </section>
+    <section>
+        <!-- WETTY -->
+        <iframe width="1000" height="500" frameborder="0" allowfullscreen="" src="https://localhost:2233/wetty/ssh/user"></iframe>
+
+        <aside class="notes">
+        <pre class="fragment" style="text-align: left; margin-top: 20px;font-size: 10px;"><code class="bash" data-trim>
+cd /opt/codebase/georgeyord/presentations/docker-introduction/terminal/; clear;
+docker-compose up
+docker-compose ps
+        </code></pre>
+        </aside>
     </section>
     <section>
         <h1>Repository</h1>
@@ -580,20 +591,16 @@ docker exec -d -p 11211:11211 memcached bash
         <p class="fragment" style="text-align: left;">
             Run migrations
             <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >
-                ./compose.sh run helper php scripts/db/migrate.php
+./compose.sh run helper php scripts/db/migrate.php
             </code></pre>
         </p>
         <p class="fragment" style="text-align: left;">
             Run tests
-            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >
-                ./compose.sh run helper ant
-            </code></pre>
+            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >./compose.sh run helper ant</code></pre>
         </p>
         <p class="fragment" style="text-align: left;">
             Run watchr
-            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >
-                ./compose.sh run helper watchr tests/watchr.rb
-            </code></pre>
+            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >./compose.sh run helper watchr tests/watchr.rb</code></pre>
         </p>
     </section>
     <section>
@@ -601,16 +608,12 @@ docker exec -d -p 11211:11211 memcached bash
 
         <p class="fragment" style="text-align: left;">
             Connect to MySQL
-            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >
-                ./compose.sh run helper php scripts/db/connect.php
-            </code></pre>
+            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >./compose.sh run helper php scripts/db/connect.php</code></pre>
         </p>
 
         <p class="fragment" style="text-align: left;">
             Anything...
-            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >
-                ./compose.sh run helper [do anything you did]
-            </code></pre>
+            <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash" >./compose.sh run helper [do anything you did]</code></pre>
         </p>
     </section>
     <section>
@@ -626,12 +629,12 @@ docker exec -d -p 11211:11211 memcached bash
 
         <ul style="text-align: left">
             <li class="fragment">
-                Finalize development environment for TP24<br>
-                <i style="font-size: smaller">XDebug</i>
+                Finalize development environment for TP24/Frontline<br>
+                <i style="font-size: smaller">Debug</i>
             </li>
             <li class="fragment">
                 Polish External services bundle<br>
-                <i style="font-size: smaller">Tagged images, MySQL, Bats tests</i>
+                <i style="font-size: smaller">Tagged images, Unit tests with Bats</i>
             </li>
             <li class="fragment">
                 Have a <span style="font-weight: bold">real</span> Private registry<br>
@@ -662,17 +665,12 @@ docker exec -d -p 11211:11211 memcached bash
     <section>
         <h2>Want to Learn More?</h2>
         <ul style="text-align: left">
-            <li><a href="http://www.docker.io/">www.docker.io</a></li>
+            <li><a href="http://www.docker.com/">www.docker.com</a></li>
             <ul>
                 <li>Documentation</li>
                 <li>Getting started (tutorial, installation, guide, etc)</li>
-                <li>Introductory <a href="http://www.docker.io/the-whole-story/">whitepaper</a></li>
             </ul>
-            <li>Github: <a href="http://github.com/dotcloud/docker">dotcloud/docker</a></li>
-            <li>IRC: freenode #docker</li>
-            <li>Google Group: <a href="https://groups.google.com/forum/#!forum/docker-user">docker-user</a></li>
-            <li>Twitter: <a href="http://twitter.com/docker">@docker</a></li>
-            <li>Meetups: <a href="http://www.docker.io/meetups">www.docker.io/meetups</a></li>
+            <li>Meetups: <a href="http://www.meetup.com/Docker-Athens">Docker-Athens</a></li>
         </ul>
     </section>
 </section>
