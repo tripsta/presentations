@@ -1,0 +1,16 @@
+reveal:
+  image: dordoka/reveal
+  command: 'bash -c "npm install && grunt serve"'
+  ports:
+   - 8000:8000
+   - 9000:9000
+  volumes:
+    - .:/home/reveal/presos
+gist-reveal:
+  image: ryanj/gist-reveal
+  ports:
+   - 8080:8080
+  environment:
+   - DEFAULT_GIST=af84d40e58c5c2a908dd
+    # In the browser's console run the following: `localStorage.secret="[REVEAL_SOCKET_SECRET]"`
+   - REVEAL_SOCKET_SECRET="M$ST3R"
