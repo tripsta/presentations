@@ -4,6 +4,7 @@ reveal:
   ports:
    - 8000:8000
    - 9000:9000
+   - 35729:35729
   volumes:
     - .:/home/reveal/presos
 gist-reveal:

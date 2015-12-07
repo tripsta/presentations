@@ -215,7 +215,7 @@
                     support segregation of duties
                 </li>
                 <li class="fragment">
-                    dignificantly improve the speed and reliability of continuous deployment and continuous integration
+                    significantly improve the speed and reliability of continuous deployment and continuous integration
                     systems
                 </li>
                 <li class="fragment">
@@ -237,7 +237,7 @@
         <p style="text-align: left;">
             A Dockerfile contains the instructions to build an image
         </p>
-        <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
+        <pre class="fragment" style="text-align: left; margin-top: 20px; background-color: #333333"><code class="bash">
 FROM ubuntu
 
 RUN apt-get install --assume-yes -qq memcached telnet
@@ -745,7 +745,7 @@ docker ps
             ,{ src: '../reveal/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
 
             // Zoom in and out with Alt+click
-            ,{ src: 'plugin/zoom-js/zoom.js', async: true }
+            ,{ src: '../reveal/plugin/zoom-js/zoom.js', async: true }
 
             // Syntax highlight for <code> elements
             ,{ src: '../reveal/plugin/highlight/highlight.js', async: true, condition: function () {
@@ -753,7 +753,7 @@ docker ps
             }
 
             // Remote control your reveal.js presentation using a touch device
-            ,{ src: 'plugin/remotes/remotes.js', async: true }
+            ,{ src: '../reveal/plugin/remotes/remotes.js', async: true }
 
             // Speaker notes
             ,{ src: '../reveal/plugin/notes/notes.js', async: true }

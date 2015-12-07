@@ -1,0 +1,7 @@
+.reveal ul.index-list {
+    list-style: none;
+    margin: 25px 45px;
+}
+.reveal ul.index-list > li{
+    margin-bottom: 10px;
+}
