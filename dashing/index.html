@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="../reveal/css/reveal.css">
+  <link rel="stylesheet" href="../reveal/css/theme/sky.css" id="theme">
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+  <!--[if lt IE 9]>
+    <script src="../reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+  <title>Introduction to Dashing</title>
+</head>
+
+<body>
+
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <h1>Dashing</h1>
+        <img style="margin: 20px;border: none;box-shadow: none;width: 300px;" src="http://dashing.io/images/bowtie.png">
+        <h4>The exceptionally handsome
+          <br/>dashboard framework</h4>
+      </section>
+      <section>
+        <h2>What is Dashing</h2>
+        <aside class="notes">
+          <p>Dashing is a Sinatra based framework that lets you build beautiful dashboards.</p>
+          <p>
+            Key features:
+          </p>
+          <p>
+            Premade widgets easily distributable using gists
+          </p>
+          <p>
+            Easily create your own with scss, html, and coffeescript
+          </p>
+          <p>
+            Widgets have a unified updating mechanism that keep things DRY and simple (batman.js)
+          </p>
+          <p>
+            Simple API to push data to your dashboards
+          </p>
+          <p>
+            Dashboards can be hosted on Heroku extremely easily
+          </p>
+        </aside>
+      </section>
+      <section>
+        <h2>Why do we use it in Tripsta</h2>
+        <aside class="notes">
+          <p>We aim to create a multi-dashboard application, integrating dashboards from Newrelic, Kibana, Graphite, Munin, Jenkins and other performance monitor tools.</p>
+          <p>Can include visual or other indicators for issues.</p>
+          <p>Can be used it team TVs and have additional team specific widgets (YouTube broadcasting, countdowns, shoutboxes etc).</p>
+        </aside>
+      </section>
+      <section>
+        <h2>Dashing entities</h2>
+        <ul>
+          <li class="fragment">Widget - <a target="_blank" href="https://gist.github.com/joepadmiraal/33e0c2a7a7b00cc2e0aa">link</a></li>
+          <li class="fragment">Dashboard - <a target="_blank" href="http://dashingdemo.herokuapp.com/sample">link</a></li>
+          <li class="fragment">Jobs - <a target="_blank" href="http://dashing.io/#data">link</a></li>
+          <li class="fragment">API</li>
+        </ul>
+        <pre class="fragment"><code>curl
+-d '{ "auth_token": "[AUTH_TOKEN]", "current": 100 }'
+http://localhost:3030/widgets/foo</code></pre>
+        <aside class="notes">
+          <p>Anatomy of a widget</p>
+          <p>- an HTML file used for layout and bindings</p>
+          <p>- a SCSS file for styles</p>
+          <p>- a coffeescript file which allows you to handle incoming data & functionality</p>
+          <p>Dashboard is a collection of widgets.</p>
+          <p>Dashing uses rufus-scheduler to schedule jobs.</p>
+          <p>Post the data you want in json to /widgets/widget_id</p>
+        </aside>
+      </section>
+      <section>
+        <h2>Code sample</h2>
+        <a target="_blank" href="https://gist.github.com/georgeyord/3401cd33d5375bbac81d">sample</a>
+      </section>
+      <section>
+        <h2>Tripsta dashboards</h2>
+        <a target="_blank" href="http://tripsta-dashboards.herokuapp.com">link</a>
+      </section>
+      <section>
+        <h2>Heroku integration</h2>
+        <pre class="fragment"><code>git push heroku master
+heroku logs -t</code></pre>
+      </section>
+      <section>
+        <h2>Dashing examples</h2>
+        <ul>
+          <li class="fragment">Newrelic metrics - <a target="_blank" href="http://tripsta-dashboards.herokuapp.com/sample_newrelic">link</a></li>
+          <li class="fragment">Newrelic iframe - <a target="_blank" href="http://tripsta-dashboards.herokuapp.com/frontline">link</a></li>
+          <li class="fragment">Kibana iframe - <a target="_blank" href="http://tripsta-dashboards.herokuapp.com/frontline">link</a></li>
+          <li class="fragment">Jenkins automated test - <a target="_blank" href="http://tripsta-dashboards.herokuapp.com/overview">link</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>The fun staff</h2>
+        <ul>
+          <li class="fragment">Pomodoro - <a target="_blank" href="http://tripsta-dashboards.herokuapp.com/frontline">link</a></li>
+          <li class="fragment">Youtube - <a target="_blank" href="http://tripsta-dashboards.herokuapp.com/frontline">link</a></li>
+          <li class="fragment">Shoutbox - <a target="_blank" href="http://tripsta-dashboards.herokuapp.com/frontline">link</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Thank you!</h2>
+        <h3>Questions?</h3>
+        <h3 class="fragment">References</h3>
+        <ul class="fragment">
+          <li><a target="_blank" href="http://dashing.io/">Dashing home</a></li>
+          <li><a target="_blank" href="http://tripsta-dashboards.herokuapp.com">Tripsta Dashing Application - Heroku</a></li>
+          <li><a target="_blank" href="https://github.com/tripsta/dashing">Tripsta Dashing Repository</a></li>
+        </ul>
+        <h3 class="fragment">The end</h3>
+      </section>
+    </div>
+
+
+  </div>
+
+  <script src="../reveal/lib/js/head.min.js"></script>
+  <script src="../reveal/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          // Display controls in the bottom right corner
+          controls: true,
+          // Display a presentation progress bar
+          progress: true,
+          // Display the page number of the current slide
+          slideNumber: true,
+          // Push each slide change to the browser history
+          history: true,
+          // Enable keyboard shortcuts for navigation
+          keyboard: true,
+          // Enable the slide overview mode
+          overview: true,
+          // Vertical centering of slides
+          center: true,
+          // Enables touch navigation on devices with touch input
+          touch: false,
+          // Loop the presentation
+          loop: false,
+          // Turns fragments on and off globally
+          fragments: true,
+          // Flags if the presentation is running in an embedded mode,
+          // i.e. contained within a limited portion of the screen
+          embedded: false,
+          // Flags if we should show a help overlay when the questionmark
+          // key is pressed
+          help: true,
+          // Number of milliseconds between automatically proceeding to the
+          // next slide, disabled when set to 0, this value can be overwritten
+          // by using a data-autoslide attribute on your slides
+          autoSlide: 0,
+          // Stop auto-sliding after user input
+          autoSlideStoppable: true,
+          // Enable slide navigation via mouse wheel
+          mouseWheel: true,
+          // Hides the address bar on mobile devices
+          hideAddressBar: true,
+          // Opens links in an iframe preview overlay
+          previewLinks: false,
+          // Transition style
+          transition: 'convex', // none/fade/slide/convex/concave/zoom
+          // Transition speed
+          transitionSpeed: 'default', // default/fast/slow
+          // Transition style for full page slide backgrounds
+          backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+          // Number of slides away from the current that are visible
+          viewDistance: 3,
+          // Parallax background image
+          parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+          // Parallax background size
+          parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+          // Amount to move parallax background (horizontal and vertical) on slide change
+          // Number, e.g. 100
+          parallaxBackgroundHorizontal: '',
+          parallaxBackgroundVertical: '',
+
+          // Optional reveal.js plugins
+          dependencies: [
+              // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+              { src: '../reveal/lib/js/classList.js', condition: function () { return !document.body.classList; } }
+
+              // Interpret Markdown in <section> elements
+              ,{ src: '../reveal/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
+              ,{ src: '../reveal/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
+
+              // Zoom in and out with Alt+click
+              ,{ src: '../reveal/plugin/zoom-js/zoom.js', async: true }
+
+              // Syntax highlight for <code> elements
+              ,{ src: '../reveal/plugin/highlight/highlight.js', async: true, condition: function () {
+                  return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); }
+              }
+
+              // Remote control your reveal.js presentation using a touch device
+              ,{ src: '../reveal/plugin/remotes/remotes.js', async: true }
+
+              // Speaker notes
+              ,{ src: '../reveal/plugin/notes/notes.js', async: true }
+
+              // MathJax
+              //,{ src: 'plugin/math/math.js', async: true }
+          ]
+      });
+
+  </script>
+
+</body>
+
+</html>

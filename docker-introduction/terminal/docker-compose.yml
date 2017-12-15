@@ -1,7 +1,7 @@
 wp:
   image: library/wordpress:latest
   ports:
-   - 80:80
+   - 8080:80
   links:
     - mysql:mysql
 mysql:

@@ -101,10 +101,33 @@
 
 <section>
     <section>
+      <h1 class="fragment current-visible">So what IS Docker?</h1>
+      <div class="fragment">
+        <h1 class="fragment highlight-current-blue">Docker is an<br/><br/>Application packaging technology</h1>
+        <ul style="list-style: none">
+          <li class="fragment highlight-current-blue">
+              that allows you
+          <li/>
+          <li class="fragment highlight-current-blue">
+              to package an application
+          <li/>
+          <li class="fragment highlight-current-blue">
+              with all of its dependencies
+          <li/>
+          <li class="fragment highlight-current-blue">
+              into a standardized unit for software development
+          <li/>
+        </ul>
+    </div>
+    </section>
+    <section>
         <h1>Docker Main Features</h1>
         <ul style="margin-top: 20px;text-align: left">
             <li class="fragment">
-                Container virtualization - Isolated and content agnostic
+                Lightweight
+            </li>
+            <li class="fragment">
+                Isolated and content agnostic
             </li>
             <li class="fragment">
                 Build once, run everywhere
@@ -113,34 +136,22 @@
                 Easily distributable
             </li>
         </ul>
+        <aside class="notes"><pre class="fragment" style="text-align: left; margin-top: 20px;font-size: 10px;"><code class="bash" data-trim>
+          Lightweight like a process
+          Container virtualization - Separation of Concerns
+          Devs have a near production dev machine
+          Using registries - Distributable images without overhead
+        </code></pre></aside>
     </section>
     <section>
-        <h1>But this isn't new?!!?</h1>
-    </section>
-    <section>
-        <h1>So why should I care?</h1>
-        <ul style="margin-top: 20px;text-align: left">
-            <li class="fragment">
-                Easy (and lightweight!) way to model reality
-            </li>
-            <li class="fragment">
-                Separation of Concerns
-            </li>
-            <li class="fragment">
-                Distributable images without overhead
-            </li>
-        </ul>
-    </section>
-    <section>
+        <h1>How much lightweihgt?</h1>
         <h2>VMs vs Containers</h2>
 
         <img style="width: 100%;" src="img/containers-vs-vms.png">
     </section>
-</section>
-
-<section>
     <section>
-        <h1>Why people care: Separation of Concerns</h1>
+        <h1>Why Devs/DevOps care</h1>
+        <h2>Separation of Concerns</h2>
 
         <img style="width: 100%;" src="img/separation-of-concerns.png">
     </section>
@@ -204,7 +215,7 @@
                     support segregation of duties
                 </li>
                 <li class="fragment">
-                    dignificantly improve the speed and reliability of continuous deployment and continuous integration
+                    significantly improve the speed and reliability of continuous deployment and continuous integration
                     systems
                 </li>
                 <li class="fragment">
@@ -226,7 +237,7 @@
         <p style="text-align: left;">
             A Dockerfile contains the instructions to build an image
         </p>
-        <pre class="fragment" style="text-align: left; margin-top: 20px;"><code class="bash">
+        <pre class="fragment" style="text-align: left; margin-top: 20px; background-color: #333333"><code class="bash">
 FROM ubuntu
 
 RUN apt-get install --assume-yes -qq memcached telnet
@@ -259,30 +270,6 @@ docker images
                 Images are stored in repositories and can be distributed through a Registry servers.
             </li>
         </ul>
-    </section>
-    <section>
-        <!-- WETTY -->
-        <iframe width="1000" height="500" frameborder="0" allowfullscreen="" src="https://localhost:2233/wetty/ssh/user"></iframe>
-
-        <aside class="notes">
-        <pre class="fragment" style="text-align: left; margin-top: 20px;font-size: 10px;"><code class="bash" data-trim>
-cd /opt/codebase/georgeyord/presentations/docker-introduction/terminal/; clear;
-docker build -t="memcached" .
-docker images | grep memcached
-docker ps | grep memcached
-docker run -d -p 11211:11211 --name "memcached" memcached
-netstat -ntlp | grep 11211
-telnet 127.0.0.1 11211
-set Test 0 100 10
-JournalDev
-stats items
-close
-docker rm -f memcached
-docker run -it -e API_KEY=c938492693a9ef73deda252dabcea georgeyord/wego
-docker run -it --rm supertest2014/nyan
-docker exec -d -p 11211:11211 memcached bash
-        </code></pre>
-        </aside>
     </section>
     <section>
         <h1>Container</h1>
@@ -319,18 +306,6 @@ docker ps
      - ./log/mysql:/var/log/mysql
 .
 </code></pre>
-    </section>
-    <section>
-        <!-- WETTY -->
-        <iframe width="1000" height="500" frameborder="0" allowfullscreen="" src="https://localhost:2233/wetty/ssh/user"></iframe>
-
-        <aside class="notes">
-        <pre class="fragment" style="text-align: left; margin-top: 20px;font-size: 10px;"><code class="bash" data-trim>
-cd /opt/codebase/georgeyord/presentations/docker-introduction/terminal/; clear;
-docker-compose up
-docker-compose ps
-        </code></pre>
-        </aside>
     </section>
     <section>
         <h1>Repository</h1>
@@ -370,23 +345,58 @@ docker-compose ps
 </section>
 
 <section>
+  <section>
+      <!-- WETTY -->
+      <iframe width="1000" height="500" frameborder="0" allowfullscreen="" src="https://localhost:2233/wetty/ssh/user"></iframe>
+
+      <aside class="notes">
+      <pre class="fragment" style="text-align: left; margin-top: 20px;font-size: 10px;"><code class="bash" data-trim>
+  cd /terminal/; clear;
+  docker build -t="memcached" .
+  docker images | grep memcached
+  docker ps | grep memcached
+  docker run -d -p 11211:11211 --name "memcached" memcached
+  netstat -ntlp | grep 11211
+  telnet 127.0.0.1 11211
+  stats items
+  set Test 0 100 10
+  JournalDev
+  stats items
+  CTRL + ]
+  close
+  docker rm -f memcached
+  docker run -it -e API_KEY=c938492693a9ef73deda252dabcea georgeyord/wego
+  docker run -it --rm supertest2014/nyan
+
+  DEBUG:
+  docker exec -d -p 11211:11211 memcached bash
+
+  cd /terminal/; clear;
+  docker-compose up
+  docker-compose ps
+      </code></pre>
+      </aside>
+  </section>
+</section>
+
+<section>
     <section>
         <h2>Under the hood</h2>
         <ul style="text-align: left">
             <li class="fragment">
-                High Level—It’s a lightweight VM
-            </li>
-            <li class="fragment">
-                Own network interface
+                High Level — It IS INDEED a lightweight VM
             </li>
             <li class="fragment">
                 Own process space
             </li>
             <li class="fragment">
+                Own network interface
+            </li>
+            <li class="fragment">
                 Can share file volumes with host <i>or not</i>
             </li>
             <li class="fragment">
-                Can run stuff as root
+                Can run stuff as root (is also the default way)
             </li>
             <li class="fragment">
                 Can have its own /sbin/init (different from host)
@@ -406,6 +416,15 @@ docker-compose ps
     <section style="text-align: left">
         <h4>Technology Stack</h4>
 
+        <h1>Own process space = Kernel Namespaces and cgroups</h1>
+
+        <p class="fragment">
+            <i> behind the scenes Docker creates a set of namespaces and control groups for the container.</i>
+        </p>
+    </section>
+    <section style="text-align: left">
+        <h4>Technology Stack</h4>
+
         <h1>Own network interface = Advanced virtual network interface</h1>
 
         <p class="fragment">
@@ -413,15 +432,6 @@ docker-compose ps
                 a virtual Ethernet bridge that automatically forwards packets between any other network
                 interfaces that are attached to it. This lets containers communicate both with the host machine and with
                 each other.</i>
-        </p>
-    </section>
-    <section style="text-align: left">
-        <h4>Technology Stack</h4>
-
-        <h1>Own process space = Kernel Namespaces and cgroups</h1>
-
-        <p class="fragment">
-            <i> behind the scenes Docker creates a set of namespaces and control groups for the container.</i>
         </p>
     </section>
     <section style="text-align: left">
@@ -497,29 +507,19 @@ docker-compose ps
         <h1>Current state</h1>
         <ul style="text-align: left">
             <li class="fragment">
-                Images for most of our <a href="https://github.com/tripsta/docker/tree/master/containers">services and applications</a>
+                Images for most of our <a href="https://github.com/tripsta/docker/tree/master/containers">services</a>
             </li>
+              <li class="fragment">
+                  Compose bundles for most of our <a href="https://github.com/tripsta/docker/tree/master/compose">applications</a>
+              </li>
             <li class="fragment">
-                Private registry in the local lan - <a href="http://docker.tripsta.net:5080/repository/index">docker.tripsta.net</a>
-            </li>
-            <li class="fragment">
-                Compose bundle for
-                <a href="https://github.com/tripsta/docker/blob/master/compose/external-services/docker-compose.example.tpl.yml">
-                    External services
-                </a><br>
-                <i style="font-size: smaller">MySQL, Gearman, ElasticSearch, RabbitMQ</i>
-            </li>
-            <li class="fragment">
-                Compose bundle for
-                <a href="https://github.com/tripsta/docker/blob/master/compose/tp24/docker-compose.example.tpl.yml">
-                    TP24
-                </a><br>
-                <i style="font-size: smaller">including internal Memcache, Mongo</i>
+                Private registry inside company's VPN <a href="http://docker.tripsta.net:5080/repository/index">docker.tripsta.net</a>
             </li>
         </ul>
     </section>
     <section>
-        <h1>External services bundle</h1>
+        <h1>A Bundle example</h1>
+        <h2>External services bundle</h2>
         <img style="height: 100%;" src="https://www.lucidchart.com/publicSegments/view/555c4fd8-6da8-497a-b742-17f60a009639/image.png">
     </section>
     <section>
@@ -578,7 +578,8 @@ docker-compose ps
         </table>
     </section>
     <section>
-        <h1>TP24 bundle</h1>
+        <h1>A feature-full Bundle example</h1>
+        <h2>TP24 bundle</h2>
         <img style="height: 100%;" src="https://www.lucidchart.com/publicSegments/view/555c4fe8-999c-4a7e-8edb-180d0a00df49/image.png">
     </section>
     <section>
@@ -617,10 +618,6 @@ docker-compose ps
         </p>
     </section>
     <section>
-        <h1>RevOp bundle</h1>
-        <img style="height: 100%;" src="https://www.lucidchart.com/publicSegments/view/555c5000-e288-4281-a1f7-191c0a009639/image.png">
-    </section>
-    <section>
         <h1>The big picture</h1>
         <img style="width: 100%;" src="https://www.lucidchart.com/publicSegments/view/555c4f94-0f54-4953-8e53-5cda0a008aee/image.png">
     </section>
@@ -629,20 +626,16 @@ docker-compose ps
 
         <ul style="text-align: left">
             <li class="fragment">
-                Finalize development environment for TP24/Frontline<br>
-                <i style="font-size: smaller">Debug</i>
-            </li>
-            <li class="fragment">
-                Polish External services bundle<br>
-                <i style="font-size: smaller">Tagged images, Unit tests with Bats</i>
-            </li>
-            <li class="fragment">
                 Have a <span style="font-weight: bold">real</span> Private registry<br>
                 <i style="font-size: smaller">Improve stability, accessibility</i>
             </li>
             <li class="fragment">
                 Automate the bundle activation and orchestration<br>
                 <i style="font-size: smaller">Spin up staging environments on demand</i>
+            </li>
+            <li class="fragment">
+                Automate the testing<br>
+                <i style="font-size: smaller">Have a <span class="fragment highlight-current-blue">fully blown</span> <span class="fragment highlight-current-red">temporary</span> testing infrustructre</i>
             </li>
             <li class="fragment">
                 ...
@@ -654,7 +647,7 @@ docker-compose ps
 <section>
     <section>
         <h1>Thank you!</h1>
-        <h2 style="margin-top: 100px;text-align: left;">Informnation for the presentation</h2>
+        <h2 style="margin-top: 100px;text-align: left;">Information for the presentation</h2>
         <ul style="text-align: left; font-size: smaller;">
             <li>Written in HTML Presentation Framework <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a></li>
             <li><a href="https://github.com/krishnasrinivas/wetty">Wetty</a> terminal used for live presentation</li>
@@ -752,7 +745,7 @@ docker-compose ps
             ,{ src: '../reveal/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
 
             // Zoom in and out with Alt+click
-            ,{ src: 'plugin/zoom-js/zoom.js', async: true }
+            ,{ src: '../reveal/plugin/zoom-js/zoom.js', async: true }
 
             // Syntax highlight for <code> elements
             ,{ src: '../reveal/plugin/highlight/highlight.js', async: true, condition: function () {
@@ -760,7 +753,7 @@ docker-compose ps
             }
 
             // Remote control your reveal.js presentation using a touch device
-            ,{ src: 'plugin/remotes/remotes.js', async: true }
+            ,{ src: '../reveal/plugin/remotes/remotes.js', async: true }
 
             // Speaker notes
             ,{ src: '../reveal/plugin/notes/notes.js', async: true }
